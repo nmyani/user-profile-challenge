@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "lib": ["ESNext", "DOM"],
+    "allowJs": true,
+    "checkJs": false,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@pages/*": ["pages/*"]
+    },
+    "strict": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["tests", "pages", "data", "types"],
+  "exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,309 @@
+[
+    {
+        "testCaseId": "TC01",
+        "description": "Validate that the First Name field is mandatory",
+        "checkMandatory": true,
+        "checkValidInput": false,
+        "regEx": "^[A-Za-z]+$",
+        "testSteps": [
+            "Leave First Name empty",
+            "Click Submit"
+        ],
+        "expectedResult": "First name must be filled out"
+    },
+    {
+        "testCaseId": "TC02",
+        "description": "Validate that the First Name field contain alphabetical characters only",
+        "isMandatory": true,
+        "isValid": false,
+        "regEx": "^[A-Za-z]+$",
+        "testSteps": [
+            "Enter names containing number, space, symbol in First Name",
+            "Click Submit after each"
+        ],
+        "expectedResult": "First name must contain alphabetical characters only"
+    },
+    {
+        "testCaseId": "TC03",
+        "description": "Validate that the Last Name field is mandatory",
+        "checkMandatory": true,
+        "isValid": false,
+        "regEx": "^[A-Za-z]+$",
+        "testSteps": [
+            "Populate First Name with a valid name containing alphabetical characters only",
+            "Leave Last Name empty",
+            "Click Submit"
+        ],
+        "expectedResult": "Last name must be filled out"
+    },
+    {
+        "testCaseId": "TC04",
+        "description": "Validate that the Last Name field contain alphabetical characters only",
+        "isMandatory": true,
+        "isValid": false,
+        "regEx": "^[A-Za-z]+$",
+        "testSteps": [
+            "Populate First Name with a valid name containing alphabetical characters only",
+            "Enter names containing number, space, symbol in Last Name",
+            "Click Submit after each"
+        ],
+        "expectedResult": "Last name must contain alphabetical characters only"
+    },
+    {
+        "testCaseId": "TC05",
+        "description": "Validate that the email field is mandatory",
+        "isMandatory": true,
+        "isValid": false,
+        "regEx": "^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$",
+        "testSteps": [
+            "Populate First Name with a valid name containing alphabetical characters only",
+            "Populate Last Name with a valid name containing alphabetical characters only",
+            "Leave Email empty",
+            "Click Submit"
+        ],
+        "expectedResult": "Email must be filled out"
+    },
+    {
+        "testCaseId": "TC06",
+        "description": "Validate that email has valid format (e.g., john.smith@example.com).",
+        "isMandatory": true,
+        "isValid": false,
+        "regEx": "^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$",
+        "testSteps": [
+            "Populate First Name with a valid name containing alphabetical characters only",
+            "Populate Last Name with a valid name containing alphabetical characters only",            
+            "Enter invalid email: with missing '@' sign, with missing domain, with missing TLD",
+            "Click Submit after each"
+        ],
+        "expectedResult": "Email must be a valid email address"
+    },
+    {
+        "testCaseId": "TC07",
+        "description": "Validate that the password field is accepting alphanumeric characters and symbols ",
+        "isMandatory": true,
+        "isValid": false,
+        "regEx": "^[\\w@#$%^&+=!]{6,}$",
+        "testSteps": [
+            "Populate First Name with a valid name containing alphabetical characters only",
+            "Populate Last Name with a valid name containing alphabetical characters only", 
+            "Populate valid email",           
+            "Enter invalid password: containing space",
+            "Click Submit"
+        ],
+        "expectedResult": "Password can only contain alphanumeric characters and symbols"
+    },
+    {
+        "testCaseId": "TC08",
+        "description": "Validate that the Confirm Password field is mandatory",
+        "isMandatory": true,
+        "isValid": false,
+        "regEx": "^[\\w@#$%^&+=!]{6,}$",
+        "testSteps": [
+            "Populate First Name with a valid name containing alphabetical characters only",
+            "Populate Last Name with a valid name containing alphabetical characters only", 
+            "Populate valid email",           
+            "Enter valid password: alphanumeric characters and symbols only",
+            "Leave Confirm Password empty",
+            "Click Submit"
+        ],
+        "expectedResult": "Confirm password must be filled out"
+    },
+    {
+        "testCaseId": "TC09",
+        "description": "Validate that Confirm password matches the inpiut in password field.",
+        "isMandatory": true,
+        "isValid": false,
+        "regEx": "^[\\w@#$%^&+=!]{6,}$",
+        "testSteps": [
+            "Populate First Name with a valid name containing alphabetical characters only",
+            "Populate Last Name with a valid name containing alphabetical characters only", 
+            "Populate valid email",           
+            "Enter valid password: alphanumeric characters and symbols only",
+            "Enter valid data in confirm password: alphanumeric characters and symbols only, different than password input",
+            "Click Submit"
+        ],
+        "expectedResult": "Passwords do not match"
+    },
+    {
+        "testCaseId": "TC10",
+        "description": "Validate User profile Creation works with mandatory data input only",
+        "isMandatory": true,
+        "isValid": false,
+        "regEx": "",
+        "testSteps": [
+            "Populate First Name with a valid name containing alphabetical characters only",
+            "Populate Last Name with a valid name containing alphabetical characters only", 
+            "Populate valid email",           
+            "Enter valid password: alphanumeric characters and symbols only",
+            "Enter valid data in confirm password: alphanumeric characters and symbols only, matching password input",
+            "Click Submit"
+        ],
+        "expectedResult": ""
+    },
+    {
+        "testCaseId": "TC11",
+        "description": "Validate date in the format of YYYY-MM-DD. Wrong format entered",
+        "isMandatory": true,
+        "isValid": false,
+        "regEx": "",
+        "testSteps": [
+            "Populate First Name with a valid name containing alphabetical characters only",
+            "Populate Last Name with a valid name containing alphabetical characters only", 
+            "Populate valid email",           
+            "Enter valid password: alphanumeric characters and symbols only",
+            "Enter valid data in confirm password: alphanumeric characters and symbols only, matching password input",
+            "Enter wrong date of birth format",
+            "Click Submit"
+        ],
+        "expectedResult": "Date of birth should be in the format of YYYY-MM-DD."
+    },
+    {
+        "testCaseId": "TC12",
+        "description": "Validate date in the format of YYYY-MM-DD. Valid format entered.",
+        "isMandatory": true,
+        "isValid": false,
+        "regEx": "",
+        "testSteps": [
+            "Populate First Name with a valid name containing alphabetical characters only",
+            "Populate Last Name with a valid name containing alphabetical characters only", 
+            "Populate valid email",           
+            "Enter valid password: alphanumeric characters and symbols only",
+            "Enter valid data in confirm password: alphanumeric characters and symbols only, matching password input",
+            "Enter valid date of birth format",
+            "Click Submit"
+        ],
+        "expectedResult": ""
+    },
+    {
+        "testCaseId": "TC13",
+        "description": "Validate phone number. Enter 11 digits",
+        "isMandatory": true,
+        "isValid": false,
+        "regEx": "",
+        "testSteps": [
+            "Populate First Name with a valid name containing alphabetical characters only",
+            "Populate Last Name with a valid name containing alphabetical characters only", 
+            "Populate valid email",           
+            "Enter valid password: alphanumeric characters and symbols only",
+            "Enter valid data in confirm password: alphanumeric characters and symbols only, matching password input",
+            "Enter valid date of birth format",
+            "Enter 11 digits for phone",
+            "Click Submit"
+        ],
+        "expectedResult": "Phone should contain only numerical characters with a maximum length of 10 digits"
+    },
+    {
+        "testCaseId": "TC14",
+        "description": "Validate phone number. Enter alphanumeric data",
+        "isMandatory": true,
+        "isValid": false,
+        "regEx": "",
+        "testSteps": [
+            "Populate First Name with a valid name containing alphabetical characters only",
+            "Populate Last Name with a valid name containing alphabetical characters only", 
+            "Populate valid email",           
+            "Enter valid password: alphanumeric characters and symbols only",
+            "Enter valid data in confirm password: alphanumeric characters and symbols only, matching password input",
+            "Enter valid date of birth format",
+            "Enter alphanumeric data for phone",
+            "Click Submit"
+        ],
+        "expectedResult": "Phone should contain only numerical characters with a maximum length of 10 digits"
+    },
+    {
+        "testCaseId": "TC15",
+        "description": "Validate phone number. Enter symbol",
+        "isMandatory": true,
+        "isValid": false,
+        "regEx": "",
+        "testSteps": [
+            "Populate First Name with a valid name containing alphabetical characters only",
+            "Populate Last Name with a valid name containing alphabetical characters only", 
+            "Populate valid email",           
+            "Enter valid password: alphanumeric characters and symbols only",
+            "Enter valid data in confirm password: alphanumeric characters and symbols only, matching password input",
+            "Enter valid date of birth format",
+            "Enter symbol",
+            "Click Submit"
+        ],
+        "expectedResult": "Phone should contain only numerical characters with a maximum length of 10 digits"
+    },
+    {
+        "testCaseId": "TC16",
+        "description": "Validate correct linkedin format",
+        "isMandatory": true,
+        "isValid": false,
+        "regEx": "",
+        "testSteps": [
+            "Populate First Name with a valid name containing alphabetical characters only",
+            "Populate Last Name with a valid name containing alphabetical characters only", 
+            "Populate valid email",           
+            "Enter valid password: alphanumeric characters and symbols only",
+            "Enter valid data in confirm password: alphanumeric characters and symbols only, matching password input",
+            "Enter valid date of birth format",
+            "Enter correct phone format",
+            "Enter correct linkedin format",
+            "Click Submit"
+        ],
+        "expectedResult": ""
+    },
+    {
+        "testCaseId": "TC17",
+        "description": "Validate correct linkedin format; wrong format input",
+        "isMandatory": true,
+        "isValid": false,
+        "regEx": "",
+        "testSteps": [
+            "Populate First Name with a valid name containing alphabetical characters only",
+            "Populate Last Name with a valid name containing alphabetical characters only", 
+            "Populate valid email",           
+            "Enter valid password: alphanumeric characters and symbols only",
+            "Enter valid data in confirm password: alphanumeric characters and symbols only, matching password input",
+            "Enter valid date of birth format",
+            "Enter correct phone format",
+            "Enter invalid linkedin format",
+            "Click Submit"
+        ],
+        "expectedResult": "Please enter a valid LinkedIn profile URL"
+    },
+    {
+        "testCaseId": "TC18",
+        "description": "Validate correct github format; wrong format input",
+        "isMandatory": true,
+        "isValid": false,
+        "regEx": "",
+        "testSteps": [
+            "Populate First Name with a valid name containing alphabetical characters only",
+            "Populate Last Name with a valid name containing alphabetical characters only", 
+            "Populate valid email",           
+            "Enter valid password: alphanumeric characters and symbols only",
+            "Enter valid data in confirm password: alphanumeric characters and symbols only, matching password input",
+            "Enter valid date of birth format",
+            "Enter correct phone format",
+            "Enter valid linkedin format",
+            "Enter invalid githgub format",
+            "Click Submit"
+        ],
+        "expectedResult": "Please enter a valid GitHub profile URL"
+    },
+    {
+        "testCaseId": "TC19",
+        "description": "Validate correct github format",
+        "isMandatory": true,
+        "isValid": false,
+        "regEx": "",
+        "testSteps": [
+            "Populate First Name with a valid name containing alphabetical characters only",
+            "Populate Last Name with a valid name containing alphabetical characters only", 
+            "Populate valid email",           
+            "Enter valid password: alphanumeric characters and symbols only",
+            "Enter valid data in confirm password: alphanumeric characters and symbols only, matching password input",
+            "Enter valid date of birth format",
+            "Enter correct phone format",
+            "Enter valid linkedin format",
+            "Enter valid github format",
+            "Click Submit"
+        ],
+        "expectedResult": ""
+    }
+]
