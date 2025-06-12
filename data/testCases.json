@@ -2,8 +2,8 @@
     {
         "testCaseId": "TC01",
         "description": "Validate that the First Name field is mandatory",
-        "checkMandatory": true,
-        "checkValidInput": false,
+        "isMandatory": true,
+        "isValid": false,
         "regEx": "^[A-Za-z]+$",
         "testSteps": [
             "Leave First Name empty",
@@ -26,7 +26,7 @@
     {
         "testCaseId": "TC03",
         "description": "Validate that the Last Name field is mandatory",
-        "checkMandatory": true,
+        "isMandatory": true,
         "isValid": false,
         "regEx": "^[A-Za-z]+$",
         "testSteps": [
